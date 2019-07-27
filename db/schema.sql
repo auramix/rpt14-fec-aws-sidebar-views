@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS sosaCloud;
+DROP DATABASE IF EXISTS relatedTracks;
 
-CREATE DATABASE sosaCloud;
+CREATE DATABASE relatedTracks;
 
-USE sosaCloud;
+USE relatedTracks;
 
 CREATE TABLE tracks(
   id int NOT NULL AUTO_INCREMENT,
@@ -60,32 +60,32 @@ CREATE TABLE reposts_tracks(
     REFERENCES tracks(id)
 );
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/tracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/tracksData.txt' 
   INTO TABLE tracks
   FIELDS TERMINATED BY ','
   (trackName, artistName, numReposts, numPlays, trackImgUrl, numComments);
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/usersData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/usersData.txt' 
   INTO TABLE users
   FIELDS TERMINATED BY ',,'
   (userName, userLocation, userImgUrl, numFollowers);
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/playlistsData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/playlistsData.txt' 
   INTO TABLE playlists
   FIELDS TERMINATED BY ','
   (playlistName, playlistImgUrl, userName, likes);
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/likesTracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/likesTracksData.txt' 
   INTO TABLE likes_tracks
   FIELDS TERMINATED BY ','
   (user_id, track_id);
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/playlistsTracksData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/playlistsTracksData.txt' 
   INTO TABLE playlists_tracks
   FIELDS TERMINATED BY ','
   (track_id, playlist_id);
 
-LOAD DATA LOCAL INFILE '/Users/scottjosephson/Desktop/AWS_EB/sidebar-views/db/fake_data/repostsData.txt' 
+LOAD DATA LOCAL INFILE 'db/fake_data/repostsData.txt' 
   INTO TABLE reposts_tracks
   FIELDS TERMINATED BY ','
   (user_id, track_id);
