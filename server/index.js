@@ -3,7 +3,7 @@ const app = express();
 const api = require('./api.js');
 
 const responseHeader = {
-  'Cache-Control': 'max-age=31536000'
+  'Cache-Control': 'max-age=31536000, no-cache'
 };
 
 app.use('/', express.static(__dirname + '/../client/dist', {

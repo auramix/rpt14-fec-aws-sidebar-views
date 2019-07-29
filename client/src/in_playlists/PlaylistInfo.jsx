@@ -21,10 +21,6 @@ const StyledDiv = styled.div`
   z-index: 0;
 `;
 
-const StyledListItem = styled.li`
-  padding: 5px 0px;
-`;
-
 const PlaylistNameAnchor = styled.a`
   position: relative;
   color: #333;
@@ -52,16 +48,16 @@ const PlaylistInfo = function (props) {
   return (
     <PlaylistInfoDiv>
       <div>
-        <ArtistAnchorEl playlist={props.playlist} artistName={props.playlist.userName}/>
+        <ArtistAnchorEl playlist={props.playlist} artistName={props.playlist.userName} onClick={(e) => e.preventDefault()}/>
       </div>
       <div>
-        <PlaylistNameAnchor href={""}>
+        <PlaylistNameAnchor href={""} onClick={(e) => e.preventDefault()}>
           {props.playlist.playlistName}
         </PlaylistNameAnchor>
       </div>
       <div>
         <List>
-          <Like href={""}>
+          <Like href={""} onClick={(e) => e.preventDefault()}>
             <span>{props.playlist.likes}</span>
           </Like>
         </List>

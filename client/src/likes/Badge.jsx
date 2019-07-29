@@ -21,7 +21,7 @@ const Badge = (props) => {
   
   return (
     <BadgeItem>
-      <BadgeAnchor>
+      <BadgeAnchor onClick={(e) => e.preventDefault()}>
          <UserPopUp artistName={props.userId} badge={true}/>
       </BadgeAnchor>
     </BadgeItem>

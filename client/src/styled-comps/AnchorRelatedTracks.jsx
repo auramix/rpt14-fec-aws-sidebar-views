@@ -52,7 +52,7 @@ const ViewAllSpan = styled(TextSpan_ART)`
 
 const AnchorRelatedTracks = function (props) {
   return (
-    <StyledAnchor_ART href={''}>
+    <StyledAnchor_ART href={''} onClick={(e) => e.preventDefault()}>
       <StyledH3>
         <ImageSpan_ART imageUrl={props.imageUrl} imageSize={props.imageSize}/>
         <TextSpan_ART>{props.textHeader}</TextSpan_ART>

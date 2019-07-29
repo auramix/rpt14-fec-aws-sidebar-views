@@ -67,9 +67,9 @@ const TrackInteractions = function (props) {
     <div>
       <List id={"interactive-list"}>
         <li><Play><span>{props.track.numPlays}</span></Play></li>
-        <li><Like href={""}><span>{props.likes}</span></Like></li>
-        <li><Repost href={""}><span>{props.track.numReposts}</span></Repost></li>
-        <li><Comment href={""}><span>{props.track.numComments}</span></Comment></li>
+        <li><Like onClick={(e) => e.preventDefault()} href={""}><span>{props.likes}</span></Like></li>
+        <li><Repost onClick={(e) => e.preventDefault()} href={""}><span>{props.track.numReposts}</span></Repost></li>
+        <li><Comment onClick={(e) => e.preventDefault()} href={""}><span>{props.track.numComments}</span></Comment></li>
       </List>
     </div>
   )

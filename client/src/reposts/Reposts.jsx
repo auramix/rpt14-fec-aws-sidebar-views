@@ -34,7 +34,7 @@ export default class Reposts extends React.Component {
 
     return (
       <div>
-        <AnchorRelatedTracks textHeader={this.state.reposts + reposts} imageSize={"20px 20px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/repost.svg)"}/>
+        <AnchorRelatedTracks textHeader={this.state.reposts + reposts} imageSize={"20px 20px"} imageUrl={"url(https://sosacloud-icon-assets.s3-us-west-1.amazonaws.com/repost.svg)"} onClick={(e) => e.preventDefault()}/>
         <RepostsBadges userIds={this.state.userIds}/>
       </div>
     );
